@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <title>SkyWay - Room example</title>
+
+    <style type="text/css">
+      
+    </style>
+  </head>
+  
+  <body>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script></script>
+
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyDxLfem_4g7dc6_oEYul9MHHUmXTpgaGXU",
+    authDomain: "othello-15537.firebaseapp.com",
+    projectId: "othello-15537",
+    storageBucket: "othello-15537.appspot.com",
+    messagingSenderId: "599010055309",
+    appId: "1:599010055309:web:17098d409297010f517ec4",
+    measurementId: "G-J9B5XFN2RV"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.firestore();
+</script>
+   
+    <div class="container">
+      <h1 class="heading">オンラインオセロルーム</h1>
+      <p class="note">
+        Change Room mode (before join in a room):
+        <a href="#">mesh</a> / <a href="#sfu">sfu</a>
+      </p>
+      <div class="room">
+        <div class ="a">
+          <span id="js-room-mode"></span>:<br>
+          <input type="text" placeholder="Room Name" id="js-room-id">
+          <button id="js-join-trigger">参加</button>
+          <button id="js-leave-trigger">退会</button>
+          <br>
+          name<br>
+          <input type="text" id="name" placeholder="ニックネーム入力">
+          <button type="button" id="form-button">入力</button>
+          <div id="form-text"></div>
+          
+          <video id="js-local-stream"></video>
+          <div id="out">
+          <div class="remote-streams" id="js-remote-streams"></div>
+          </div>
+        </div>
+
+        <div class="othello">
+          <!- ターンの表示 ->
+          <div id="view_tarn"></div>
+          <!- 初期化ボタン ->
+          <button type="button" id="ban_init" onclick="ban_init()">やり直し</button>
+          <!- 盤面 ->
+          <table id="field"></table>
+          
+          <ul id="messages"></ul>
+        </div>
+        
+        <div class="chat">
+          <pre class="messages" id="js-messages"></pre>
+        
+          <input type="text" id="js-local-text" placeholder="テキスト入力">
+          <button id="js-send-trigger">送信</button>
+        </div>
+
+        
+        
+      </div>
+      <p class="meta" id="js-meta"></p>
+    </div>
+    <script src="//cdn.webrtc.ecl.ntt.com/skyway-4.4.1.js"></script>
+    <script src="../_shared/key.js"></script>
+    <script src="./script.js"></script>
+    <script src="7.js"></script>
+    <script type="text/javascript">
+    
+    </script>
+  </body>
+</html>
